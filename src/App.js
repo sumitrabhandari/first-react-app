@@ -16,6 +16,9 @@ setAlert({
   msg: message,
   type:type
 })
+setTimeout(()=>{
+setAlert(null)
+}, 2000)
 }
 
  const toggleMode=()=>{
@@ -37,7 +40,7 @@ setAlert({
      <Alert alert={alert}/>
      {/* <Navbar/> */}
     <div className="container my-3">
-      <TextForm heading="Enter your message" mode={mode}/>
+      <TextForm showAlert={showAlert} heading="Enter your message" mode={mode}/>
       </div>
      <About/>
    
