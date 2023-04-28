@@ -25,7 +25,7 @@ export default function TextForm(props) {
 
   return (
     <>
-      <div className="container"  >
+      <div className="container"             style={{color: props.mode=== 'dark' ? 'white':'black'}}  >
         <h1>{props.heading}</h1>
         <div className="mb-3">
           <textarea
@@ -33,7 +33,7 @@ export default function TextForm(props) {
             id="myBox"
             rows={8}  
             onChange={handleChange}
-            // style={{backgroundColor: props.mode=== 'dark' ? 'gry':'white'}}
+            style={{backgroundColor: props.mode=== 'dark' ? 'grey':'white', color: props.mode==='dark' ? 'white':'black'}}
             value={text}
             placeholder="Type your text here"
           />
@@ -42,7 +42,7 @@ export default function TextForm(props) {
         <button className="btn btn-primary mx-3" onClick={ handleDownClick }>Convert to LowerCase</button>
         <button className="btn btn-danger mx-3" onClick={ handleClearClick }>Clear</button>
       </div>
-      <div className="container my-4 ">
+      <div className="container my-4 "  style={{color: props.mode=== 'dark' ? 'white':'black'}}>
         <h4>Your Text Summary</h4>
         <p><strong>{text.split(" ").length}</strong> words and <strong>{text.length} </strong> characters</p>
         <p>{0.008 * text.split(" ").length} minutes</p>

@@ -9,13 +9,13 @@ import React, { useState } from 'react';
 function App() {
 const[mode, setMode]=useState('light')
  const toggleMode=()=>{
-  if(mode === 'dark'){
-    setMode('light');
-    // document.body.style.backgroundColor='light';
+  if(mode === 'light'){
+    setMode('dark');
+    document.body.style.backgroundColor='gray';
   }
   else{
-    setMode('dark');
-    // document.body.style.backgroundColor='grey';
+    setMode('light');
+    document.body.style.backgroundColor='white';
    }
  }
 
@@ -25,7 +25,7 @@ const[mode, setMode]=useState('light')
 
      {/* <Navbar/> */}
     <div className="container my-3">
-      <TextForm heading="Enter your message"/>
+      <TextForm heading="Enter your message" mode={mode}/>
       </div>
      <About/>
      
