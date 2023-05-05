@@ -7,24 +7,17 @@ export default function TextForm(props) {
     setText(e.target.value)
   }
   const handleUpClick=()=>{
-    // console.log("Uppercase clicked" + text)
     let newText=text.toUpperCase();
     setText(newText);
-    // props.showAlert("converted to Uppercase","success");
   }
   const handleClearClick=()=>{
-    // console.log("Uppercase clicked" + text)
     let newText=(" ");
     setText(newText);
-    // props.showAlert("Texted Cleared","success");
   }
   const handleDownClick=()=>{
-    // console.log("Uppercase clicked" + text)
     setText(text.toLowerCase());
-    // props.showAlert("converted to Lowercase","success");
   }
   const [text, setText] = useState("");
-  // setText("hello")
 
   return (
     <>
@@ -47,7 +40,7 @@ export default function TextForm(props) {
       </div>
       <div className="container my-4 "  style={{color: props.mode=== 'dark' ? 'white':'black'}}>
         <h4>Your Text Summary</h4>
-        <p><strong>{text.split(" ").filter((element)=>{return element.length!==0}).length}</strong> words and <strong>{text.length} </strong> characters</p>
+        <p><strong>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length}</strong> words and <strong>{text.length} </strong> characters</p>
         <p>{0.008 * text.split(" ").filter((element)=>{return element.length!==0}).length} minutes</p>
         <h4>Preview</h4>
         <p>{text.length>0?text:"Enter Something in the text box above to preview here"}</p>
